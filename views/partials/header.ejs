@@ -1,0 +1,22 @@
+<!-- views/partials/header.ejs -->
+<link rel="stylesheet" href="/stylesheets/partials.css" />
+<nav>
+  <% if (user) { %>
+    <div>
+      <h1>Library App</h1>
+      <div>
+        <a href="/books">My Library</a>
+        <a href="/account">My Account</a> <!-- New "My Account" link -->
+        <a href="/auth/logout">Logout</a>
+      </div>
+    </div>
+  <% } else { %>
+    <div>
+      <h1>Library App</h1>
+      <div>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      </div>
+    </div>
+  <% } %>
+</nav>

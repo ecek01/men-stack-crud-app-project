@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Library App</title>
+</head>
+<body>
+  <header>
+    <%- include('partials/header') %>
+    <h1>Welcome to the Library App</h1>
+    <nav>
+      <% if (user) { %>
+        <p>Welcome, <%= user.username %>!</p>
+        <a href="/books">My Library</a>
+        <a href="/account">My Account</a>
+        <a href="/auth/logout">Logout</a>
+      <% } else { %>
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      <% } %>
+    </nav>
+  </header>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account</title>
+</head>
+<body>
+  <%- include('partials/header') %> <!-- Include header -->
+
+  <h1>My Account</h1>
+
+  <h2>Username: <%= user.username %></h2>
+
+  <!-- Display error message for username if it exists -->
+  <% if (usernameError) { %>
+    <p style="color: red;"><%= usernameError %></p>
+  <% } %>
+
+  <!-- Form to update username -->
+  <form action="/account/update-username" method="POST">
+    <label for="new-username">New Username:</label>
+    <input type="text" id="new-username" name="username" required>
+    <button type="submit">Update Username</button>
+  </form>
+
+  <!-- Display error message for password if it exists -->
+  <% if (passwordError) { %>
+    <p style="color: red;"><%= passwordError %></p>
+  <% } %>
+
+  <!-- Form to update password -->
+  <form action="/account/update-password" method="POST">
+    <label for="old-password">Old Password:</label>
+    <input type="password" id="old-password" name="oldPassword" required>
+
+    <label for="new-password">New Password:</label>
+    <input type="password" id="new-password" name="password" required>
+
+    <label for="confirm-password">Confirm New Password:</label>
+    <input type="password" id="confirm-password" name="confirmPassword" required>
+
+    <button type="submit">Update Password</button>
+  </form>
+  <button onclick="confirmDelete()">Delete Account</button>
+
+  <script>
+    function confirmDelete() {
+      const isConfirmed = confirm("Are you sure you want to delete your account?");
+      if (isConfirmed) {
+        fetch('/account/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert("Account deleted successfully.");
+            window.location.href = '/';
+          } else {
+            alert("An error occurred. Account not deleted.");
+          }
+        })
+        .catch(error => {
+          console.error("Error deleting account:", error);
+          alert("An error occurred. Please try again.");
+        });
+      }
+    }
+  </script>
+
+  <!-- Back to Home button -->
+  <div style="margin-top: 20px;">
+    <a href="/" style="text-decoration: none;">
+      <button type="button">Back to Home</button>
+    </a>
+  </div>
+</body>
+</html>
+

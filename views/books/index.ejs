@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Library</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+  <h1>My Library</h1>
+
+  <a href="/books/new">Add New Book</a>
+
+  <% if (books.length > 0) { %>
+    <ul>
+      <% books.forEach(book => { %>
+        <li>
+          <a href="/books/<%= book._id %>"><%= book.title %> by <%= book.author %></a>
+          - <a href="/books/<%= book._id %>/edit">Edit</a>
+          - <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No books in your library yet.</p>
+  <% } %>
+
+  <div style="margin-top: 20px;">
+    <a href="/" style="text-decoration: none;">
+      <button type="button">Back to Home</button>
+    </a>
+  </div>
+</body>
+</html>

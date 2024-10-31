@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= book.title %></title>
+</head>
+<body>
+  <%- include('../partials/header') %>
+  
+  <h1><%= book.title %></h1>
+  <p>Author: <%= book.author %></p>
+  <p>Genre: <%= book.genre %></p>
+  <p>Status: <%= book.status %></p>
+  
+  <% if (book.status === 'Reading' && book.currentPage && book.totalPages && book.totalPages > 0) { %>
+    <p>Current Page: <%= book.currentPage %> of <%= book.totalPages %></p>
+    <% let progress = ((book.currentPage / book.totalPages) * 100).toFixed(2); %>
+    <p>Progress: <%= progress %>% complete</p>
+  <% } %>
+
+  <% if (book.status === 'Completed' && book.rating) { %>
+    <p>Rating: <%= book.rating %> / 5</p>
+  <% } %>
+  
+  <a href="/books/<%= book._id %>/edit">Edit Book</a>
+  <a href="/books">Back to Library</a>
+  <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+    <button type="submit">Delete</button>
+  </form>
+</body>
+</html>
+
