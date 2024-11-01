@@ -1,0 +1,44 @@
+/* stylesheets/partials.css */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: transparent; /* Keep transparent to show background */
+    width: 100vw; /* Full width of the viewport */
+    box-sizing: border-box; /* Ensure padding doesn’t add to the width */
+    position: relative; /* Ensures it stays in place */
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between; /* Title on left, links on right */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Optional: keep content centered within this width */
+}
+
+#nav-header {
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    flex: 1; /* Pushes the title to the far left */
+    text-align: left;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Space between each link */
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #eaf4ff; /* Lighter color on hover */
+}

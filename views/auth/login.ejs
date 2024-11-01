@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
-  <h1>Login</h1>
-  <% if (typeof error !== 'undefined') { %>
-    <p style="color: red;"><%= error %></p>
-  <% } %>
+<body class="auth-page">
+  <div class="account-container">
+    <h1 class="account-title">Login</h1>
 
-  <form action="/auth/login" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required>
-    
-    <button type="submit">Log In</button>
-  </form>
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error-message"><%= error %></p>
+    <% } %>
 
-  <p>Don't have an account? <a href="/auth/register">Register here</a></p>
-  <div style="margin-top: 20px;">
-    <a href="/" style="text-decoration: none;">
-        <button type="button">Back to Home</button>
-    </a>
-</div>
+    <form action="/auth/login" method="POST" class="account-form">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required>
+      
+      <button type="submit" class="account-button">Log In</button>
+    </form>
+
+    <p class="switch-auth">Don't have an account? <a href="/auth/register" class="back-home-link">Register here</a></p>
+
+    <div class="back-home-container">
+      <a href="/" class="back-home-link">
+        <button type="button" class="back-home-button">Back to Home</button>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
+
+

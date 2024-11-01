@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const session = require('express-session');
 
+app.use(express.static('public'));
+
 const port = process.env.PORT || 3000;
 
 const mongoose = require("mongoose");

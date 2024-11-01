@@ -4,30 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= book.title %></title>
+  <link rel="stylesheet" href="/stylesheets/show.css">
 </head>
-<body>
-  <%- include('../partials/header') %>
+<body class="book-page">
   
-  <h1><%= book.title %></h1>
-  <p>Author: <%= book.author %></p>
-  <p>Genre: <%= book.genre %></p>
-  <p>Status: <%= book.status %></p>
-  
-  <% if (book.status === 'Reading' && book.currentPage && book.totalPages && book.totalPages > 0) { %>
-    <p>Current Page: <%= book.currentPage %> of <%= book.totalPages %></p>
-    <% let progress = ((book.currentPage / book.totalPages) * 100).toFixed(2); %>
-    <p>Progress: <%= progress %>% complete</p>
-  <% } %>
+  <main class="book-details">
+    <div class="book-info">
+      <h1 class="book-title"><%= book.title %></h1>
+      <p class="book-author">Author: <%= book.author %></p>
+      <p class="book-genre">Genre: <%= book.genre %></p>
+      <p class="book-status">Status: <%= book.status %></p>
 
-  <% if (book.status === 'Completed' && book.rating) { %>
-    <p>Rating: <%= book.rating %> / 5</p>
-  <% } %>
-  
-  <a href="/books/<%= book._id %>/edit">Edit Book</a>
-  <a href="/books">Back to Library</a>
-  <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
-    <button type="submit">Delete</button>
-  </form>
+      <% if (book.status === 'Reading' && book.currentPage && book.totalPages && book.totalPages > 0) { %>
+        <p class="book-progress">Current Page: <%= book.currentPage %> of <%= book.totalPages %></p>
+        <% let progress = ((book.currentPage / book.totalPages) * 100).toFixed(2); %>
+        <p class="book-progress">Progress: <%= progress %>% complete</p>
+      <% } %>
+
+      <% if (book.status === 'Completed' && book.rating) { %>
+        <p class="book-rating">Rating: <%= book.rating %> / 5</p>
+      <% } %>
+
+      <% if (book.coverUrl) { %>
+        <div class="book-cover">
+          <img src="<%= book.coverUrl %>" alt="Cover of the book titled <%= book.title %> by <%= book.author %>">
+        </div>
+      <% } %>
+      
+    </div>
+
+    <div class="book-actions">
+      <a href="/books/<%= book._id %>/edit" class="edit-button">Edit Book</a>
+      <a href="/books" class="back-button">Back to Library</a>
+      <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit" class="delete-button">Delete</button>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
 

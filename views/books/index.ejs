@@ -4,33 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Library</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
-    <%- include('../partials/header') %>
-  <h1>My Library</h1>
+<body class="library-page">
+  <%- include('../partials/header') %>
 
-  <a href="/books/new">Add New Book</a>
+  <main class="library-content">
+    <h1 class="library-title">My Library</h1>
+    <a href="/books/new" class="add-book-button">Add New Book</a>
 
-  <% if (books.length > 0) { %>
-    <ul>
-      <% books.forEach(book => { %>
-        <li>
-          <a href="/books/<%= book._id %>"><%= book.title %> by <%= book.author %></a>
-          - <a href="/books/<%= book._id %>/edit">Edit</a>
-          - <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
-              <button type="submit">Delete</button>
-            </form>
-        </li>
-      <% }) %>
-    </ul>
-  <% } else { %>
-    <p>No books in your library yet.</p>
-  <% } %>
-
-  <div style="margin-top: 20px;">
-    <a href="/" style="text-decoration: none;">
-      <button type="button">Back to Home</button>
-    </a>
-  </div>
+    <% if (books.length > 0) { %>
+      <ul class="book-grid">
+        <% books.forEach(book => { %>
+            <li class="book-item">
+              <% if (book.coverUrl) { %>
+                <a href="/books/<%= book._id %>">
+                  <img src="<%= book.coverUrl %>" alt="Cover of the book titled <%= book.title %> by <%= book.author %>" class="book-cover">
+                </a>
+              <% } %>
+              <div class="book-details">
+                <a href="/books/<%= book._id %>" class="book-title"><%= book.title %></a>
+                <p class="book-author">by <%= book.author %></p>
+                <div class="book-actions">
+                  <a href="/books/<%= book._id %>/edit" class="edit-button">Edit</a>
+                  <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-button">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </li>
+          <% }) %>
+      </ul>
+    <% } else { %>
+      <p class="no-books-message">No books in your library yet.</p>
+    <% } %>
+  </main>
 </body>
 </html>

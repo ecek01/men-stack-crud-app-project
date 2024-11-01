@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Book</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Book</title>
+        <link rel="stylesheet" href="/stylesheets/edit.css">
+      </head>
 <body>
-  <%- include('../partials/header') %>
+
   <h1>Edit Book</h1>
 
   <form action="/books/<%= book._id %>?_method=PUT" method="POST">
@@ -26,30 +27,61 @@
       <option value="Completed" <%= book.status === 'Completed' ? 'selected' : '' %>>Completed</option>
     </select>
 
+    <!-- Fields specific to Reading status -->
+    <div id="reading-fields" style="display: none;">
+      <label for="currentPage">Current Page:</label>
+      <input type="number" id="currentPage" name="currentPage" min="0" value="<%= book.currentPage || 0 %>">
+
+      <label for="totalPages">Total Pages:</label>
+      <input type="number" id="totalPages" name="totalPages" min="1" value="<%= book.totalPages || 0 %>">
+    </div>
+
     <!-- Rating input, only visible if status is 'Completed' -->
-    <div id="rating-container">
+    <div id="rating-container" style="display: none;">
       <label for="rating">Rating (1-5):</label>
       <input type="number" id="rating" name="rating" min="1" max="5" value="<%= book.rating || '' %>">
     </div>
 
+    <label for="coverUrl">Book Cover URL:</label>
+    <input type="text" id="coverUrl" name="coverUrl" value="<%= book.coverUrl || '' %>">
+
     <button type="submit">Update Book</button>
   </form>
 
-  <a href="/books/<%= book._id %>">Cancel</a>
+  <a href="/books" class="back-to-library">Back to Library</a>
 
   <script>
     function toggleFields() {
       const status = document.getElementById("status").value;
+      const readingFields = document.getElementById("reading-fields");
+      const currentPage = document.getElementById("currentPage");
+      const totalPages = document.getElementById("totalPages");
       const ratingContainer = document.getElementById("rating-container");
-      ratingContainer.style.display = status === "Completed" ? "block" : "none";
+      const rating = document.getElementById("rating");
+
+      if (status === "Reading") {
+        readingFields.style.display = "block";
+        currentPage.removeAttribute("disabled");
+        totalPages.removeAttribute("disabled");
+        ratingContainer.style.display = "none";
+        rating.setAttribute("disabled", "true");
+      } else if (status === "Completed") {
+        readingFields.style.display = "none";
+        currentPage.setAttribute("disabled", "true");
+        totalPages.setAttribute("disabled", "true");
+        ratingContainer.style.display = "block";
+        rating.removeAttribute("disabled");
+      } else {
+        readingFields.style.display = "none";
+        ratingContainer.style.display = "none";
+        currentPage.setAttribute("disabled", "true");
+        totalPages.setAttribute("disabled", "true");
+        rating.setAttribute("disabled", "true");
+      }
     }
 
-    // Set initial visibility on page load based on book status
-    window.onload = function() {
-      const status = "<%= book.status %>";
-      document.getElementById("rating-container").style.display = status === "Completed" ? "block" : "none";
-      toggleFields(); // Initialize fields based on the current status
-    };
+    // Run toggleFields on page load to ensure the correct fields are displayed
+    document.addEventListener("DOMContentLoaded", toggleFields);
   </script>
 </body>
 </html>

@@ -1,0 +1,132 @@
+/* Apply background image */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp8091351.jpg&f=1&nofb=1&ipt=589c3896187af121f463eee3df1e6392c75f2c5611d1ebc2706e39358efea96e&ipo=images');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+  }
+  
+  /* Container for edit form */
+  .edit-page {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for strong contrast */
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #ffffff; /* White border to define the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    margin-top: 20px; /* Space from the top for h1 alignment */
+  }
+  
+  /* Title styling */
+  h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Center form fields */
+  }
+  
+  /* Label styling */
+  label {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    width: 100%; /* Ensures labels align to input width */
+  }
+  
+  /* Input and select styling */
+  input[type="text"],
+  input[type="number"],
+  select {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    width: 100%; /* Consistent width for all fields */
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    outline: none;
+    border-color: #4b89da;
+    box-shadow: 0 0 4px rgba(75, 137, 218, 0.3);
+  }
+  
+  #rating-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    width: 100%; /* Consistent width */
+    margin-top: 10px;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 12px;
+    background-color: #4b89da;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%; /* Full width button */
+  }
+  
+  button:hover {
+    background-color: #3a6ca1;
+  }
+  
+  /* Align "Back to Library" link at the bottom */
+  .back-to-library {
+    margin-top: auto;
+    margin-bottom: 20px; /* Adjust spacing for bottom positioning */
+    text-decoration: none;
+    color: #4b89da;
+    font-weight: bold;
+  }
+  
+  .back-to-library:hover {
+    color: #3a6ca1;
+  }
+  
+  /* Back to Library button styling */
+.back-to-library {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #4b89da;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid #4b89da;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-to-library:hover {
+    background-color: #4b89da;
+    color: #ffffff;
+}

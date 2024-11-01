@@ -1,0 +1,420 @@
+/* Background for guest users on the home page */
+.home-page.guest {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F08%2FBeautiful-Library-Wallpaper.jpg&f=1&nofb=1&ipt=0cce221af040f7a05f213fe6e86ef0fa998270aef56cd06fa262050746c3cbc8&ipo=images');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Background for logged-in users on the home page */
+.home-page.logged-in {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fbackground%2F20230522%2Foriginal%2Fpngtree-vintage-books-on-wooden-desk-with-a-picture-picture-image_2695916.jpg&f=1&nofb=1&ipt=7dac519fe5399a5b8b553a46ab169c84c1201a8b50741e221d9e57e89605a240&ipo=images');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Styling for the hero section on the home page */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content {
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #eaf4ff;
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    color: #eaf4ff;
+    margin: 10px 0 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Buttons for guest users */
+.button-signup {
+    background-color: #ce4866;
+    color: #ffffff;
+}
+
+.button-signup:hover {
+    background-color: #b53b54;
+}
+
+.button-signin {
+    background-color: #eaf4ff;
+    color: #4b89da;
+}
+
+.button-signin:hover {
+    background-color: #d3e2f3;
+}
+
+/* Buttons for logged-in users */
+.button-library, .button-account, .button-logout {
+    background-color: #4b89da;
+    color: #ffffff;
+}
+
+.button-library:hover, .button-account:hover, .button-logout:hover {
+    background-color: #3a6ca1;
+}
+
+/* === Styles for the Login and Register Pages === */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f4f8; /* light background for readability */
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+.auth-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #eaf4ff;
+}
+
+.auth-form label {
+    display: block;
+    margin-top: 15px;
+    color: #eaf4ff;
+    font-weight: bold;
+    text-align: left;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #ce4866;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #b53b54;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.switch-auth, .back-home {
+    margin-top: 20px;
+}
+
+.switch-auth a, .back-button {
+    color: #4b89da;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-auth a:hover, .back-button:hover {
+    color: #eaf4ff;
+}
+
+/* Account Page Styling */
+.account-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    color: #333333;
+}
+
+.account-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.account-title {
+    font-size: 2.5em;
+    color: #4b89da;
+    margin-bottom: 20px;
+}
+
+.account-username {
+    font-size: 1.4em;
+    color: #333333;
+    margin: 15px 0;
+}
+
+.account-form {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.account-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #4b89da;
+}
+
+.account-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+}
+
+.account-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #4b89da;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.account-button:hover {
+    background-color: #3a6ca1;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Delete Account Button */
+.delete-account-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #ce4866;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-account-button:hover {
+    background-color: #b53b54;
+}
+
+/* Back to Home Button */
+.back-home-container {
+    margin-top: 20px;
+}
+
+.back-home-link {
+    text-decoration: none;
+}
+
+.back-home-button {
+    padding: 12px 30px;
+    border-radius: 5px;
+    background-color: #4b89da;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+    background-color: #3a6ca1;
+}
+
+
+/* stylesheets/style.css */
+
+/* Background for the library page */
+.library-page {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F06%2FFree-Images-Book-Wallpapers-HD.jpg&f=1&nofb=1&ipt=dead549a9e34def6317c17c50c25da5c696039ee3705ac339a7cfb070b29a95e&ipo=images');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+  
+  /* Page title */
+  .library-title {
+    font-size: 2.5em;
+    color: #eaf4ff;
+    margin-bottom: 20px;
+  }
+  
+  /* Add New Book button */
+  .add-book-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 20px; /* Adds space between the button and the book grid */
+    background-color: #4b89da;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-book-button:hover {
+    background-color: #3a6ca1;
+  }
+  
+  /* Book grid layout */
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; /* Space between books */
+    width: 100%;
+    max-width: 1200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Book item styling without background */
+  .book-item {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  /* Smaller book cover styling */
+  .book-cover {
+    width: 80px; /* Smaller width for book cover */
+    height: 120px; /* Fixed height to maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Book title and author */
+  .book-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #eaf4ff;
+    text-decoration: none;
+  }
+  
+  .book-author {
+    font-size: 1em;
+    color: #c5d1e8;
+    margin-top: 5px;
+  }
+  
+  /* Action buttons for edit and delete */
+  .book-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .edit-button, .delete-button {
+    background-color: #ce4866;
+    color: #ffffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #b53b54;
+  }
+  
+  .delete-button:hover {
+    background-color: #e84a6c;
+  }
+  
+  /* Message for no books */
+  .no-books-message {
+    font-size: 1.2em;
+    color: #c5d1e8;
+    margin-top: 20px;
+    text-align: center;
+  }
+  

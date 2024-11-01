@@ -1,22 +1,22 @@
 <!-- views/partials/header.ejs -->
-<link rel="stylesheet" href="/stylesheets/partials.css" />
-<nav>
-  <% if (user) { %>
-    <div>
-      <h1>Library App</h1>
-      <div>
-        <a href="/books">My Library</a>
-        <a href="/account">My Account</a> <!-- New "My Account" link -->
-        <a href="/auth/logout">Logout</a>
-      </div>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="/stylesheets/partials.css">
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- Title on the left side -->
+    <h1 id="nav-header">Library App</h1>
+
+    <!-- Links on the right side -->
+    <div class="nav-links">
+      <% if (user) { %>
+        <a class="nav-link" href="/books">My Library</a>
+        <a class="nav-link" href="/account">My Account</a>
+        <a class="nav-link" href="/auth/logout">Logout</a>
+      <% } else { %>
+        <a class="nav-link" href="/auth/login">Login</a>
+        <a class="nav-link" href="/auth/register">Register</a>
+      <% } %>
     </div>
-  <% } else { %>
-    <div>
-      <h1>Library App</h1>
-      <div>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/register">Register</a>
-      </div>
-    </div>
-  <% } %>
+  </div>
 </nav>

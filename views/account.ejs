@@ -4,77 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Account</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
-  <%- include('partials/header') %> <!-- Include header -->
+<body class="account-page">
 
-  <h1>My Account</h1>
+  <div class="account-container">
+    <h1 class="account-title">My Account</h1>
 
-  <h2>Username: <%= user.username %></h2>
+    <h2 class="account-username">Username: <%= user.username %></h2>
 
-  <!-- Display error message for username if it exists -->
-  <% if (usernameError) { %>
-    <p style="color: red;"><%= usernameError %></p>
-  <% } %>
+    <% if (usernameError) { %>
+      <p class="error-message"><%= usernameError %></p>
+    <% } %>
 
-  <!-- Form to update username -->
-  <form action="/account/update-username" method="POST">
-    <label for="new-username">New Username:</label>
-    <input type="text" id="new-username" name="username" required>
-    <button type="submit">Update Username</button>
-  </form>
+    <!-- Form to update username -->
+    <form action="/account/update-username" method="POST" class="account-form">
+      <label for="new-username">New Username:</label>
+      <input type="text" id="new-username" name="username" required>
+      <button type="submit" class="account-button">Update Username</button>
+    </form>
 
-  <!-- Display error message for password if it exists -->
-  <% if (passwordError) { %>
-    <p style="color: red;"><%= passwordError %></p>
-  <% } %>
+    <% if (passwordError) { %>
+      <p class="error-message"><%= passwordError %></p>
+    <% } %>
 
-  <!-- Form to update password -->
-  <form action="/account/update-password" method="POST">
-    <label for="old-password">Old Password:</label>
-    <input type="password" id="old-password" name="oldPassword" required>
+    <!-- Form to update password -->
+    <form action="/account/update-password" method="POST" class="account-form">
+      <label for="old-password">Old Password:</label>
+      <input type="password" id="old-password" name="oldPassword" required>
 
-    <label for="new-password">New Password:</label>
-    <input type="password" id="new-password" name="password" required>
+      <label for="new-password">New Password:</label>
+      <input type="password" id="new-password" name="password" required>
 
-    <label for="confirm-password">Confirm New Password:</label>
-    <input type="password" id="confirm-password" name="confirmPassword" required>
+      <label for="confirm-password">Confirm New Password:</label>
+      <input type="password" id="confirm-password" name="confirmPassword" required>
 
-    <button type="submit">Update Password</button>
-  </form>
-  <button onclick="confirmDelete()">Delete Account</button>
+      <button type="submit" class="account-button">Update Password</button>
+    </form>
 
-  <script>
-    function confirmDelete() {
-      const isConfirmed = confirm("Are you sure you want to delete your account?");
-      if (isConfirmed) {
-        fetch('/account/delete', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert("Account deleted successfully.");
-            window.location.href = '/';
-          } else {
-            alert("An error occurred. Account not deleted.");
-          }
-        })
-        .catch(error => {
-          console.error("Error deleting account:", error);
-          alert("An error occurred. Please try again.");
-        });
+    <!-- Delete Account Button -->
+    <button class="delete-account-button" onclick="confirmDelete()">Delete Account</button>
+
+    <script>
+      function confirmDelete() {
+        const isConfirmed = confirm("Are you sure you want to delete your account?");
+        if (isConfirmed) {
+          fetch('/account/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              alert("Account deleted successfully.");
+              window.location.href = '/';
+            } else {
+              alert("An error occurred. Account not deleted.");
+            }
+          })
+          .catch(error => {
+            console.error("Error deleting account:", error);
+            alert("An error occurred. Please try again.");
+          });
+        }
       }
-    }
-  </script>
+    </script>
 
-  <!-- Back to Home button -->
-  <div style="margin-top: 20px;">
-    <a href="/" style="text-decoration: none;">
-      <button type="button">Back to Home</button>
-    </a>
+    <!-- Back to Home button -->
+    <div class="back-home-container">
+      <a href="/" class="back-home-link">
+        <button type="button" class="back-home-button">Back to Home</button>
+      </a>
+    </div>
   </div>
 </body>
 </html>
-

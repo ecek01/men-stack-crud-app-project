@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the Library App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/partials.css">
 </head>
-<body>
+<body class="home-page <%= user ? 'logged-in' : 'guest' %>">
   <header>
     <%- include('partials/header') %>
-    <h1>Welcome to the Library App</h1>
-    <nav>
-      <% if (user) { %>
-        <p>Welcome, <%= user.username %>!</p>
-        <a href="/books">My Library</a>
-        <a href="/account">My Account</a>
-        <a href="/auth/logout">Logout</a>
-      <% } else { %>
-        <a href="/auth/login">Login</a>
-        <a href="/auth/register">Register</a>
-      <% } %>
-    </nav>
   </header>
+
+  <!-- Hero Section -->
+  <main class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Library App</h1>
+      <p class="hero-subtitle">Your personal reading tracker.</p>
+      <div class="button-group">
+        <% if (user) { %>
+          <a class="button button-library" href="/books">My Library</a>
+          <a class="button button-account" href="/account">My Account</a>
+          <a class="button button-logout" href="/auth/logout">Logout</a>
+        <% } else { %>
+          <a class="button button-signup" href="/auth/register">Register</a>
+          <a class="button button-signin" href="/auth/login">Login</a>
+        <% } %>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
+
