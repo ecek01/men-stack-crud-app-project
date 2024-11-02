@@ -14,7 +14,7 @@ const morgan = require("morgan");
 const authController = require('../../controllers/authController');
 const bookController = require('../../controllers/bookController');
 const isSignedIn = require('../..//middleware/isSignedIn');
-const passUserToView = require('.../../middleware/passUserToView');
+const passUserToView = require('../../middleware/passUserToView');
 const userController = require('../../controllers/userController');
 const accountController = require('../../controllers/accountController');
 
