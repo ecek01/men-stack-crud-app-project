@@ -21,8 +21,8 @@ const accountController = require('../../controllers/accountController');
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    tls: true,
-    tlsInsecure: false 
+    serverSelectionTimeoutMS: 60000, // 60 seconds
+    heartbeatFrequencyMS: 10000
 });
 
 mongoose.connection.on("connected", () => {
