@@ -18,7 +18,12 @@ const passUserToView = require('../../middleware/passUserToView');
 const userController = require('../../controllers/userController');
 const accountController = require('../../controllers/accountController');
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    tls: true,
+    tlsInsecure: false 
+});
 
 mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
