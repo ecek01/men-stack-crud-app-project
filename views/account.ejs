@@ -17,7 +17,6 @@
       <p class="error-message"><%= usernameError %></p>
     <% } %>
 
-    <!-- Form to update username -->
     <form action="/account/update-username" method="POST" class="account-form">
       <label for="new-username">New Username:</label>
       <input type="text" id="new-username" name="username" required>
@@ -28,7 +27,6 @@
       <p class="error-message"><%= passwordError %></p>
     <% } %>
 
-    <!-- Form to update password -->
     <form action="/account/update-password" method="POST" class="account-form">
       <label for="old-password">Old Password:</label>
       <input type="password" id="old-password" name="oldPassword" required>
@@ -42,7 +40,6 @@
       <button type="submit" class="account-button">Update Password</button>
     </form>
 
-    <!-- Delete Account Button -->
     <button class="delete-account-button" onclick="confirmDelete()">Delete Account</button>
 
     <script>
@@ -70,7 +67,6 @@
       }
     </script>
 
-    <!-- Back to Home button -->
     <div class="back-home-container">
       <a href="/" class="back-home-link">
         <button type="button" class="back-home-button">Back to Home</button>

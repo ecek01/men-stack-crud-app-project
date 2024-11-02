@@ -1,4 +1,4 @@
-/* Apply background image */
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp8091351.jpg&f=1&nofb=1&ipt=589c3896187af121f463eee3df1e6392c75f2c5611d1ebc2706e39358efea96e&ipo=images');
@@ -13,20 +13,18 @@ body {
     padding: 20px 0;
   }
   
-  /* Container for edit form */
   .edit-page {
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background for strong contrast */
+    background-color: rgba(0, 0, 0, 0.8); 
     padding: 30px;
     border-radius: 10px;
-    border: 2px solid #ffffff; /* White border to define the container */
+    border: 2px solid #ffffff; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 90%;
     text-align: center;
-    margin-top: 20px; /* Space from the top for h1 alignment */
+    margin-top: 20px; 
   }
   
-  /* Title styling */
   h1 {
     font-size: 2em;
     color: #ffffff;
@@ -35,23 +33,22 @@ body {
     width: 100%;
   }
   
-  /* Form styling */
   form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* Center form fields */
+    align-items: center; 
   }
   
-  /* Label styling */
+
   label {
     font-weight: bold;
     color: #ffffff;
     text-align: left;
-    width: 100%; /* Ensures labels align to input width */
+    width: 100%;
   }
   
-  /* Input and select styling */
+
   input[type="text"],
   input[type="number"],
   select {
@@ -60,7 +57,7 @@ body {
     border-radius: 5px;
     font-size: 1em;
     color: #333;
-    width: 100%; /* Consistent width for all fields */
+    width: 100%;
     box-sizing: border-box;
   }
   
@@ -77,11 +74,11 @@ body {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ffffff;
-    width: 100%; /* Consistent width */
+    width: 100%; 
     margin-top: 10px;
   }
   
-  /* Button styling */
+
   button {
     padding: 12px;
     background-color: #4b89da;
@@ -92,17 +89,16 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    width: 100%; /* Full width button */
+    width: 100%; 
   }
   
   button:hover {
     background-color: #3a6ca1;
   }
   
-  /* Align "Back to Library" link at the bottom */
   .back-to-library {
     margin-top: auto;
-    margin-bottom: 20px; /* Adjust spacing for bottom positioning */
+    margin-bottom: 20px; 
     text-decoration: none;
     color: #4b89da;
     font-weight: bold;
@@ -112,7 +108,6 @@ body {
     color: #3a6ca1;
   }
   
-  /* Back to Library button styling */
 .back-to-library {
     display: inline-block;
     padding: 10px 20px;

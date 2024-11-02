@@ -1,21 +1,21 @@
-/* stylesheets/partials.css */
+
 
 .navbar {
     display: flex;
     justify-content: center;
     padding: 10px 20px;
-    background-color: transparent; /* Keep transparent to show background */
-    width: 100vw; /* Full width of the viewport */
-    box-sizing: border-box; /* Ensure padding doesn’t add to the width */
-    position: relative; /* Ensures it stays in place */
+    background-color: transparent; 
+    width: 100vw; 
+    box-sizing: border-box; 
+    position: relative; 
 }
 
 .navbar-content {
     display: flex;
-    justify-content: space-between; /* Title on left, links on right */
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Optional: keep content centered within this width */
+    max-width: 1200px; 
 }
 
 #nav-header {
@@ -23,13 +23,13 @@
     color: #ffffff;
     font-weight: bold;
     margin: 0;
-    flex: 1; /* Pushes the title to the far left */
+    flex: 1;
     text-align: left;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px; /* Space between each link */
+    gap: 20px; 
 }
 
 .nav-link {
@@ -40,5 +40,5 @@
 }
 
 .nav-link:hover {
-    color: #eaf4ff; /* Lighter color on hover */
+    color: #eaf4ff; 
 }

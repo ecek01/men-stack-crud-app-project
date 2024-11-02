@@ -2,23 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Book = require('../models/book');
 
-// Show all books (Library Dashboard)
 router.get('/', async (req, res) => {
   try {
     const books = await Book.find({ user_id: req.session.user._id });
-    res.render('books/index', { books }); // Ensure 'books/index' exists in views
+    res.render('books/index', { books }); 
   } catch (error) {
     console.error("Error fetching books:", error);
     res.redirect('/');
   }
 });
 
-// Show form to add a new book
 router.get('/new', (req, res) => {
-  res.render('books/new'); // Ensure 'books/new' exists in views
+  res.render('books/new');
 });
 
-// Handle adding a new book (Create)
 router.post('/', async (req, res) => {
   try {
     const { title, author, genre, status, rating, currentPage, totalPages, coverUrl } = req.body;
@@ -41,19 +38,17 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Show details of a specific book
 router.get('/:id', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
     if (!book) return res.status(404).send("Book not found");
-    res.render('books/show', { book }); // Ensure 'books/show' exists in views
+    res.render('books/show', { book }); 
   } catch (error) {
     console.error("Error fetching book details:", error);
     res.redirect('/books');
   }
 });
 
-// Show form to edit an existing book
 router.get('/:id/edit', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
@@ -65,7 +60,6 @@ router.get('/:id/edit', async (req, res) => {
   }
 });
 
-// Handle editing an existing book (Update)
 router.put('/:id', async (req, res) => {
   try {
     const { title, author, genre, status, currentPage, totalPages, rating, coverUrl } = req.body;
@@ -89,7 +83,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// Handle deleting a book
 router.delete('/:id', async (req, res) => {
     try {
       await Book.findByIdAndDelete(req.params.id);

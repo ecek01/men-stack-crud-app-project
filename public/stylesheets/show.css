@@ -1,4 +1,4 @@
-/* Background for the show page */
+
 body.book-page {
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp8091351.jpg&f=1&nofb=1&ipt=589c3896187af121f463eee3df1e6392c75f2c5611d1ebc2706e39358efea96e&ipo=images');
     background-size: cover;
@@ -13,9 +13,9 @@ body.book-page {
     margin: 0;
 }
 
-/* Main container */
+
 .book-details {
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.6); 
     padding: 20px 30px;
     border-radius: 10px;
     max-width: 600px;
@@ -23,7 +23,7 @@ body.book-page {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Book information styling */
+
 .book-title {
     font-size: 2.5em;
     font-weight: bold;
@@ -36,7 +36,7 @@ body.book-page {
     margin: 10px 0;
 }
 
-/* Book cover styling */
+
 .book-cover img {
     max-width: 200px;
     margin-top: 20px;
@@ -44,7 +44,7 @@ body.book-page {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Button styles */
+
 .book-actions {
     display: flex;
     gap: 15px;

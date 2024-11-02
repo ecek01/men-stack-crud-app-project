@@ -1,4 +1,4 @@
-/* Background for guest users on the home page */
+
 .home-page.guest {
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F08%2FBeautiful-Library-Wallpaper.jpg&f=1&nofb=1&ipt=0cce221af040f7a05f213fe6e86ef0fa998270aef56cd06fa262050746c3cbc8&ipo=images');
     background-size: cover;
@@ -12,7 +12,7 @@
     color: #ffffff;
 }
 
-/* Background for logged-in users on the home page */
+
 .home-page.logged-in {
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpng.pngtree.com%2Fbackground%2F20230522%2Foriginal%2Fpngtree-vintage-books-on-wooden-desk-with-a-picture-picture-image_2695916.jpg&f=1&nofb=1&ipt=7dac519fe5399a5b8b553a46ab169c84c1201a8b50741e221d9e57e89605a240&ipo=images');
     background-size: cover;
@@ -26,7 +26,7 @@
     color: #ffffff;
 }
 
-/* Styling for the hero section on the home page */
+
 .hero {
     display: flex;
     justify-content: center;
@@ -74,7 +74,7 @@
     cursor: pointer;
 }
 
-/* Buttons for guest users */
+
 .button-signup {
     background-color: #ce4866;
     color: #ffffff;
@@ -93,7 +93,7 @@
     background-color: #d3e2f3;
 }
 
-/* Buttons for logged-in users */
+
 .button-library, .button-account, .button-logout {
     background-color: #4b89da;
     color: #ffffff;
@@ -103,13 +103,13 @@
     background-color: #3a6ca1;
 }
 
-/* === Styles for the Login and Register Pages === */
+
 .auth-page {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f0f4f8; /* light background for readability */
+    background: #f0f4f8; 
     background-size: cover;
     background-position: center;
 }
@@ -184,7 +184,7 @@
     color: #eaf4ff;
 }
 
-/* Account Page Styling */
+
 .account-page {
     display: flex;
     justify-content: center;
@@ -259,7 +259,7 @@
     margin-top: 10px;
 }
 
-/* Delete Account Button */
+
 .delete-account-button {
     width: 100%;
     padding: 12px;
@@ -277,7 +277,7 @@
     background-color: #b53b54;
 }
 
-/* Back to Home Button */
+
 .back-home-container {
     margin-top: 20px;
 }
@@ -302,9 +302,6 @@
 }
 
 
-/* stylesheets/style.css */
-
-/* Background for the library page */
 .library-page {
     background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F06%2FFree-Images-Book-Wallpapers-HD.jpg&f=1&nofb=1&ipt=dead549a9e34def6317c17c50c25da5c696039ee3705ac339a7cfb070b29a95e&ipo=images');
     background-size: cover;
@@ -318,18 +315,16 @@
     padding-top: 30px;
   }
   
-  /* Page title */
   .library-title {
     font-size: 2.5em;
     color: #eaf4ff;
     margin-bottom: 20px;
   }
   
-  /* Add New Book button */
   .add-book-button {
     display: inline-block;
     padding: 10px 20px;
-    margin-bottom: 20px; /* Adds space between the button and the book grid */
+    margin-bottom: 20px; 
     background-color: #4b89da;
     color: #ffffff;
     text-decoration: none;
@@ -342,11 +337,11 @@
     background-color: #3a6ca1;
   }
   
-  /* Book grid layout */
+
   .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px; /* Space between books */
+    gap: 20px; 
     width: 100%;
     max-width: 1200px;
     list-style: none;
@@ -354,22 +349,21 @@
     margin: 0;
   }
   
-  /* Book item styling without background */
+
   .book-item {
     text-align: center;
     color: #ffffff;
   }
 
-  /* Smaller book cover styling */
+
   .book-cover {
-    width: 80px; /* Smaller width for book cover */
-    height: 120px; /* Fixed height to maintain aspect ratio */
+    width: 80px; 
+    height: 120px; 
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
   }
-  
-  /* Book title and author */
+
   .book-title {
     font-size: 1.2em;
     font-weight: bold;
@@ -383,7 +377,7 @@
     margin-top: 5px;
   }
   
-  /* Action buttons for edit and delete */
+
   .book-actions {
     display: flex;
     justify-content: center;
@@ -410,7 +404,6 @@
     background-color: #e84a6c;
   }
   
-  /* Message for no books */
   .no-books-message {
     font-size: 1.2em;
     color: #c5d1e8;
